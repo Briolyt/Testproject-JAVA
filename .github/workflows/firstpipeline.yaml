@@ -12,5 +12,5 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Run tests
-      run: sh test/run.sh
+      run: mvn —batch-mode clean install -f initial/pom.xml -Psonar-coverage -DskipTests -Ddbtype=postgresql
 
