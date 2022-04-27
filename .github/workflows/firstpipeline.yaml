@@ -1,11 +1,6 @@
 name: Run project test
 
-on:
-  push:
-    branches-ignore: main
-  pull_request:
-    branches-ignore: main
-
+on: push 
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,4 +12,5 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Run tests
-      run: sh test/run.sh 
+      run: sh test/run.sh
+
