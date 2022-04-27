@@ -15,6 +15,7 @@ jobs:
       run: mvn clean test -f initial/pom.xml
 
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: Checkout this repo
