@@ -12,5 +12,5 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Run tests
-      run: mvn —batch-mode clean install -f initial/pom.xml -DskipTests -Ddbtype=postgresql
+      run: mvn clean install -f initial/pom.xml -DskipTests -Ddbtype=postgresql
 
