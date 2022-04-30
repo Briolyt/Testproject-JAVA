@@ -5,9 +5,9 @@
 
     <servers>
         <server>
-            <id>my-proj</id>
-            <username>someuser</username>
-            <password>somepass</password>
+            <id>libs-release-local</id>
+            <username>${ARTIFACTORY_USER}</username>
+            <password>${ARTIFACTORY_PASSWORD}</password>
         </server>
     </servers>
 

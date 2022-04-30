@@ -15,12 +15,12 @@
 
     <distributionManagement>
         <repository>
-            <id>engineering</id>
+            <id>libs-release-local</id>
             <name>my-proj-releases</name>
             <url>${ARTIFACTORY_URL}/repositories/local/libs-release-local</url>
         </repository>
         <snapshotRepository>
-            <id>my-proj</id>
+            <id>libs-release-local</id>
             <name>my-proj-snapshots</name>
             <url>${ARTIFACTORY_URL}/repositories/local/libs-snapshot-local</url>
         </snapshotRepository>
