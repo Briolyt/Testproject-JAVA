@@ -11,13 +11,6 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-          <distributionManagement>
-            <repository>
-            <id>internal.repo</id>
-            <name>MyCo Internal Repository</name>
-            <url>Host to Company Repository</url>
-            </repository>
-        </distributionManagement>
     </properties>
 
     <distributionManagement>
