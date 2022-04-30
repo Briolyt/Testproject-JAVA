@@ -11,7 +11,28 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+          <distributionManagement>
+            <repository>
+            <id>internal.repo</id>
+            <name>MyCo Internal Repository</name>
+            <url>Host to Company Repository</url>
+            </repository>
+        </distributionManagement>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>engineering</id>
+            <name>my-proj-releases</name>
+            <url>${ARTIFACTORY_URL}/repositories/local/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>my-proj</id>
+            <name>my-proj-snapshots</name>
+            <url>${ARTIFACTORY_URL}/repositories/local/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
     <build>
         <plugins>

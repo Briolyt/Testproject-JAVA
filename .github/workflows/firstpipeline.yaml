@@ -25,4 +25,16 @@ jobs:
 
     - name: Run build
       run: mvn install -f initial/pom.xml -DskipTests -Ddbtype=postgresql
+  
+  deploy_to_artifactory:
+    nedds: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: checout this repo
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+    
+    - name: Run deploy
+      run: mvn clean deploy -f initial/pom.aml -DskipTest
 
