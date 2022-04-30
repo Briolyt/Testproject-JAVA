@@ -27,7 +27,7 @@ jobs:
       run: mvn install -f initial/pom.xml -DskipTests -Ddbtype=postgresql
   
   deploy_to_artifactory:
-    nedds: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: checout this repo
