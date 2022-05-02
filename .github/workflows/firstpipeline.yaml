@@ -31,4 +31,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - name: Run deploy
-      run: mvn clean package -f initial/pom.aml
+      run: mvn clean package -f initial/pom.xml

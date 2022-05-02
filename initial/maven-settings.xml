@@ -6,8 +6,8 @@
     <servers>
         <server>
             <id>libs-release-local</id>
-            <username>${ARTIFACTORY_USER}</username>
-            <password>${ARTIFACTORY_PASSWORD}</password>
+            <username>admin</username>
+            <password>Kentsmentolom.228</password>
         </server>
     </servers>
 
