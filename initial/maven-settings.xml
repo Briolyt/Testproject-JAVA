@@ -6,13 +6,13 @@
     <servers>
         <server>
             <id>es.releases</id>
-            <username>admin</username>
-            <password>Kentsmentolom.228</password>
+            <username>$(NEXUS_USER)</username>
+            <password>$(NEXUS_PASSWORD)</password>
         </server>
         <server>
             <id>es.snapshots</id>
-            <username>admin</username>
-            <password>Kentsmentolom.228</password>
+            <username>$(NEXUS_USER)</username>
+            <password>$(NEXUS_PASSWORD)</password>
         </server>
     </servers>
 
