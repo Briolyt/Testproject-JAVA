@@ -17,12 +17,12 @@
         <repository>
             <id>es.releases</id>
             <name>maven-releases</name>
-            <url>$(NEXUS_URL)repository/maven-releases/</url>
+            <url>$(Nexus.NEXUS_URL)repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>es.snapshots</id>
             <name>maven-snapshots</name>
-            <url>$(NEXUS_URL)repository/maven-snapshots/</url>
+            <url>$(Nexus.NEXUS_URL)repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
