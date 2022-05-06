@@ -29,6 +29,11 @@ jobs:
   deploy_to_nexus:
     needs: build
     runs-on: ubuntu-latest
-    steps:  
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
     - name: Run deploy
-      run: mvn -q clean deploy -f  /home/runner/work/Testproject-JAVA/initial/pom.xml -DskipTests -Ddbtype=postgresql -s  /home/runner/work/Testproject-JAVA/initial/maven-settings.xml -gs  /home/runner/work/Testproject-JAVA/initial/maven-settings.xml
+      run: mvn -q clean deploy -f /initial/pom.xml -DskipTests -Ddbtype=postgresql -s /initial/maven-settings.xml -gs /initial/maven-settings.xml
