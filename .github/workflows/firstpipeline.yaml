@@ -31,4 +31,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     - name: Run deploy
-      run: mvn -q clean deploy -f pom.xml -DskipTests -Ddbtype=postgresql -s maven-settings.xml -gs maven-settings.xml
+      run: mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
