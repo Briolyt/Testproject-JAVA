@@ -38,7 +38,3 @@ jobs:
 
     - name: Run deploy
       run: mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
-    env:
-        NEXUS_URL: ${{ NEXUS_URL }}
-        NEXUS_PASSWORD: ${{ NEXUS_PASSWORD }}
-        NEXUS_USER: ${{ NEXUS_USER }}
