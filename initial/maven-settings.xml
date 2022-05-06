@@ -5,7 +5,12 @@
 
     <servers>
         <server>
-            <id>libs-release-local</id>
+            <id>es.releases</id>
+            <username>admin</username>
+            <password>Kentsmentolom.228</password>
+        </server>
+        <server>
+            <id>es.snapshots</id>
             <username>admin</username>
             <password>Kentsmentolom.228</password>
         </server>

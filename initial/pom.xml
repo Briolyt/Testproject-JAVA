@@ -15,14 +15,14 @@
 
     <distributionManagement>
         <repository>
-            <id>libs-release-local</id>
-            <name>my-proj-releases</name>
-            <url>http://51.250.50.83:8082/ui/admin/repositories/local/libs-release-local</url>
+            <id>es.releases</id>
+            <name>maven-releases</name>
+            <url>http://51.250.89.126:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>libs-release-local</id>
-            <name>my-proj-snapshots</name>
-            <url>http://51.250.50.83:8082/ui/admin/repositories/local/libs-snapshot-local</url>
+            <id>es.snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://51.250.89.126:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
