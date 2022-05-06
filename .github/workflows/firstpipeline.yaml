@@ -30,9 +30,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-        NEXUS_URL: ${{ Nexus.NEXUS_URL }}
-        NEXUS_PASSWORD: ${{ Nexus.NEXUS_PASSWORD }}
-        NEXUS_USER: ${{ Nexus.NEXUS_USER }}
+        NEXUS_URL: ${{ NEXUS_URL }}
+        NEXUS_PASSWORD: ${{ NEXUS_PASSWORD }}
+        NEXUS_USER: ${{ NEXUS_USER }}
     steps:
     - name: Checkout this repo
       uses: actions/checkout@v2
