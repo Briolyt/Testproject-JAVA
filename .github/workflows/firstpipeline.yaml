@@ -36,4 +36,4 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Run deploy
-      run: mvn -q clean deploy -f /initial/pom.xml -DskipTests -Ddbtype=postgresql -gs /initial/maven-settings.xml
+      run: mvn -q clean deploy -f pom.xml -DskipTests -Ddbtype=postgresql -s maven-settings.xml -gs maven-settings.xml
