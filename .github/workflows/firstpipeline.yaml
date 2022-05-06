@@ -29,10 +29,7 @@ jobs:
   deploy_to_nexus:
     needs: build
     runs-on: ubuntu-latest
-    env:
-        NEXUS_URL: ${{ NEXUS_URL }}
-        NEXUS_PASSWORD: ${{ NEXUS_PASSWORD }}
-        NEXUS_USER: ${{ NEXUS_USER }}
+    
     steps:
     - name: Checkout this repo
       uses: actions/checkout@v2
@@ -41,3 +38,7 @@ jobs:
 
     - name: Run deploy
       run: mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
+    env:
+        NEXUS_URL: ${{ NEXUS_URL }}
+        NEXUS_PASSWORD: ${{ NEXUS_PASSWORD }}
+        NEXUS_USER: ${{ NEXUS_USER }}
