@@ -31,14 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
-    - uses: microsoft/variable-substitution@v1 
-    with:
-        files: 'employee.json'
-    env:
-        username: tcranz
-        password: ${{ secrets.NEXUS_PASSWORD }}
-
     - name: Checkout this repo
       uses: actions/checkout@v2
       with:
@@ -46,7 +38,8 @@ jobs:
 
     - name: Run deploy 
       run: |
-        echo ${{ secrets.NEXUS_USER }}
+        export NEXUS_USER=${{ secrets.NEXUS_USER }}
+        echo $NEXUS_USER
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
       
 
