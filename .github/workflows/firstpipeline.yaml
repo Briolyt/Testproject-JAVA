@@ -32,7 +32,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - uses: employee.json@v1 
 
     - name: Checkout this repo
       uses: actions/checkout@v2
@@ -52,10 +51,10 @@ jobs:
       run: |
         echo "$NEXUS_USER"
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
-      # env:
-        # NEXUS_USER: ${{ secrets.NEXUS_USER }}
-        # NEXUS_URL: ${{ secrets.NEXUS_URL }}
-        # NEXUS_URL: ${{ secrets.NEXUS_PASSWORD }}
+      env:
+        NEXUS_USER: ${{ env.NEXUS_USER }}
+        NEXUS_URL: ${{ env.NEXUS_URL }}
+        NEXUS_URL: ${{ env.NEXUS_PASSWORD }}
         # NEXUS_USER: admin
         # NEXUS_URL: http://51.250.89.126:8081/
         # NEXUS_PASSWORD: Kentsmentolom.228
