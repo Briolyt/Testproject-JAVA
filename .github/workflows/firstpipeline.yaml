@@ -37,8 +37,8 @@ jobs:
           ref: ${{ github.ref }}
     
     - name: Set variebles
-      uses: actions/checkout@v2
-      uses: microsoft/variable-substitution@v1 
+    - uses: actions/checkout@v2
+    - uses: microsoft/variable-substitution@v1 
       with:
           files: 'employee.json'
       env:
