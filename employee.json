@@ -1,5 +1,5 @@
 {
-  "NEXUS_USER": "",
-  "NEXUS_PASSWORD": "",
-  "NEXUS_URL": ""
+  "NEXUS_USER": "admin",
+  "NEXUS_PASSWORD": "Kentsmentolom.228",
+  "NEXUS_URL": "http://51.250.89.126:8081/"
 }
