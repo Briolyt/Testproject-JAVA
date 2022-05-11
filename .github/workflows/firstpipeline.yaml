@@ -35,14 +35,18 @@ jobs:
       uses: actions/checkout@v2
       with:
           ref: ${{ github.ref }}
-          NEXUS_USER: ${{ secrets.NEXUS_USER }}
+
+    - name: Set variables
+      uses: microsoft/variable-substitution@v1 
+      with:
+        files: 'employee.json'
+      env:
+        NEXUS_USER: ${{ secrets.NEXUS_USER }}
 
     - name: Run deploy 
       run: |
-        echo "$NEXUS_USER"
+        echo $NEXUS_USER
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
-      env: 
-        NEXUS_USER: ${{ secrets.NEXUS_USER }}
       
 
 
