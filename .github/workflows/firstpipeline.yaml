@@ -46,6 +46,9 @@ jobs:
           NEXUS_URL: ${{ secrets.NEXUS_URL }}
 
     - name: Run deploy
+      uses: microsoft/variable-substitution@v1 
+      with:
+          files: 'employee.json'
       run: |
         echo NEXUS_USER
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
