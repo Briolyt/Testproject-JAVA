@@ -1,0 +1,54 @@
+name: Run project test
+
+on: push 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Run tests
+      run: mvn clean test -f initial/pom.xml
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Run build
+      run: mvn install -f initial/pom.xml -DskipTests -Ddbtype=postgresql
+  
+  deploy_to_nexus:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+          ref: ${{ github.ref }}
+
+    - name: Set variables
+      uses: microsoft/variable-substitution@v1 
+      with:
+        files: 'employee.json'
+      env:
+        NEXUS_USER: ${{ secrets.NEXUS_USER }}
+        NEXUS_URL: ${{ secrets.NEXUS_URL }}
+
+    - name: Run deploy 
+      run: |
+        echo $NEXUS_USER
+        mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
+      
+
+
+    
