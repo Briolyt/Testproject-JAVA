@@ -41,13 +41,16 @@ jobs:
       with:
         files: 'employee.json'
       env:
-        NEXUS_USER: ${{ NEXUS.NEXUS_USER }}
-        NEXUS_URL: ${{ NEXUS.NEXUS_URL }}
+        NEXUS_USER: ${{ secrets.NEXUS_USER }}
+        NEXUS_URL: ${{ secrets.NEXUS_URL }}
 
     - name: Run deploy 
       run: |
-        echo $NEXUS_USER
+        echo "$NEXUS_USER"
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
+      env:
+        NEXUS_USER: ${{ secrets.NEXUS_USER }}
+        NEXUS_URL: ${{ secrets.NEXUS_URL }}
       
 
 
