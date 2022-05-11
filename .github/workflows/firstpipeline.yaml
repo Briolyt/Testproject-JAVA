@@ -32,7 +32,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - uses: microsoft/variable-substitution@v1 
+    - uses: employee.json@v1 
 
     - name: Checkout this repo
       uses: actions/checkout@v2
