@@ -31,6 +31,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@v2
+    - uses: microsoft/variable-substitution@v1 
+    with:
+        files: 'employee.json'
+    env:
+        username: tcranz
+        password: ${{ secrets.NEXUS_PASSWORD }}
+
     - name: Checkout this repo
       uses: actions/checkout@v2
       with:
