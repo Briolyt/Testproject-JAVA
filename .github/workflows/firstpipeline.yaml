@@ -54,7 +54,7 @@ jobs:
       env:
         NEXUS_USER: ${{ env.NEXUS_USER }}
         NEXUS_URL: ${{ env.NEXUS_URL }}
-        NEXUS_URL: ${{ env.NEXUS_PASSWORD }}
+        NEXUS_PASSWORD: ${{ env.NEXUS_PASSWORD }}
         # NEXUS_USER: admin
         # NEXUS_URL: http://51.250.89.126:8081/
         # NEXUS_PASSWORD: Kentsmentolom.228
