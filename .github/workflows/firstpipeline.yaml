@@ -27,7 +27,7 @@ jobs:
       run: mvn install -f initial/pom.xml -DskipTests -Ddbtype=postgresql
   
   deploy_to_nexus:
-    needs: build
+    
     runs-on: ubuntu-latest
     
     steps:
@@ -47,7 +47,7 @@ jobs:
 
     - name: Run deploy
       run: |
-        echo $NEXUS_USER
+        echo $(NEXUS_USER)
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
 
     
