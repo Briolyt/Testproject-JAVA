@@ -38,13 +38,13 @@ jobs:
       with:
           ref: ${{ github.ref }}
 
-    # - name: Set variables
-    #   uses: microsoft/variable-substitution@v1 
-    #   with:
-    #     files: 'employee.json'
-    #   env:
-    #     NEXUS_USER: ${{ secrets.NEXUS_USER }}
-    #     NEXUS_URL: ${{ secrets.NEXUS_URL }}
+    - name: Set variables
+      uses: microsoft/variable-substitution@v1 
+      with:
+        files: 'employee.json'
+      env:
+        NEXUS_USER: ${{ secrets.NEXUS_USER }}
+        NEXUS_URL: ${{ secrets.NEXUS_URL }}
 
     - name: Run deploy 
       
