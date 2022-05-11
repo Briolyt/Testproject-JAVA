@@ -47,7 +47,7 @@ jobs:
 
     - name: Run deploy
         run: |
-          - echo $(NEXUS_USER)
-          - mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
+          echo $(NEXUS_USER)
+          mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
 
     
