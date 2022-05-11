@@ -42,6 +42,7 @@ jobs:
         files: 'employee.json'
       env:
         NEXUS_USER: ${{ secrets.NEXUS_USER }}
+        NEXUS_URL: ${{ secrets.NEXUS_URL }}
 
     - name: Run deploy 
       run: |
