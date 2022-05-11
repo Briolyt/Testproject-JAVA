@@ -32,7 +32,9 @@ jobs:
     
     steps:
     - name: Checkout this repo
-      uses: actions/checkout@v2
+      uses: 
+        - actions/checkout@v2
+        - microsoft/variable-substitution@v1 
       with:
           ref: ${{ github.ref }}
 
