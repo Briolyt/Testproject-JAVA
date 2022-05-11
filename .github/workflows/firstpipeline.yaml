@@ -39,8 +39,7 @@ jobs:
 
     - name: Run deploy 
       run: |
-        export NEXUS_USER=${{ secrets.NEXUS_USER }}
-        echo $NEXUS_USER
+        echo "$NEXUS_USER"
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
       env: 
         NEXUS_USER: ${{ secrets.NEXUS_USER }}
