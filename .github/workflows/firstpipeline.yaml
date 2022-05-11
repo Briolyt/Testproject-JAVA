@@ -49,6 +49,8 @@ jobs:
       run: |
         echo NEXUS_USER
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
+      with:
+        files: 'employee.json'
       env:
           NEXUS_USER: ${{ secrets.NEXUS_USER}}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
