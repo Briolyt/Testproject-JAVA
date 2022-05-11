@@ -32,11 +32,10 @@ jobs:
     
     steps:
     - name: Checkout this repo
-      uses: 
-        - actions/checkout@v2
-        - microsoft/variable-substitution@v1 
+      uses: actions/checkout@v2
       with:
           ref: ${{ github.ref }}
+          NEXUS_USER: ${{ secrets.NEXUS_USER }}
 
     - name: Run deploy 
       run: |
