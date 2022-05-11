@@ -49,12 +49,12 @@ jobs:
       run: |
         echo "$NEXUS_USER"
         mvn -q clean deploy -f initial/pom.xml -DskipTests -Ddbtype=postgresql -s initial/maven-settings.xml -gs initial/maven-settings.xml
-      # env:
+      env:
       #   NEXUS_USER: ${{ secrets.NEXUS_USER }}
       #   NEXUS_URL: ${{ secrets.NEXUS_URL }}
-        # NEXUS_USER: admin
-        # NEXUS_URL: http://51.250.89.126:8081/
-        # NEXUS_PASSWORD: Kentsmentolom.228
+        NEXUS_USER: admin
+        NEXUS_URL: http://51.250.89.126:8081/
+        NEXUS_PASSWORD: Kentsmentolom.228
       
 
 
